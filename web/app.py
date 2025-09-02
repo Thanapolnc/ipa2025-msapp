@@ -42,6 +42,8 @@ def add_comment():
     return redirect(url_for("main"))
 
 @app.route("/delete", methods=["POST"])
+
+
 def delete_comment():
     try:
         idx = request.form.get("idx")
@@ -77,12 +79,13 @@ def router_detail(router_id):
                     router_interfaces.append({
                         "timestamp": timestamp,
                         "interface": interface.get("interface", "N/A"),
-                        "ip": interface.get("ip_address", "N/A"), 
+                        "ip": interface.get("ip_address", "N/A"),
                         "status": interface.get("status", "N/A"),
                         "proto": interface.get("proto", "N/A")
                     })
         
-        return render_template("router_detail.html", router=router, router_interfaces=router_interfaces)
+        return render_template("router_detail.html", \
+        router=router, router_interfaces=router_interfaces)
     return redirect(url_for("main"))
 
 if __name__ == "__main__":
