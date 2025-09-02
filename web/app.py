@@ -90,7 +90,8 @@ def router_detail(router_id):
                     )
 
         return render_template(
-            "router_detail.html", router=router, router_interfaces=router_interfaces
+            "router_detail.html", \
+            router=router, router_interfaces=router_interfaces
         )
     return redirect(url_for("main"))
 
