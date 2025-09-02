@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>Sample app</title>
+    <link rel="stylesheet" href="/static/style.css" />
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Router: {{ router.ip }}</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>Timestamp</td>
+                <td>Interface</td>
+                <td>IP Address</td>
+                <td>Status</td>
+                <td>Protocol</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% for r in router_interfaces %}
+          <tr>
+            <td>{{ r.timestamp }}</td>
+            <td>{{ r.interface }}</td>
+            <td>{{ r.ip }}</td>
+            <td>{{ r.status }}</td>
+            <td>{{ r.proto }}</td>
+          </tr>
+        {% endfor %}
+        {% if not router_interfaces %}
+          <tr>
+            <td colspan="5">No interface data available</td>
+          </tr>
+        {% endif %}
+        </tbody>
+    </table>
+
+</body>
+</html>
