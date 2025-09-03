@@ -5,5 +5,11 @@ services:
   scheduler:
     image: ${DOCKERHUB_USERNAME}/scheduler:latest
 
-  worker:
+  worker1:
+    image: ${DOCKERHUB_USERNAME}/worker:latest
+
+  worker2:
+    image: ${DOCKERHUB_USERNAME}/worker:latest
+
+  worker3:
     image: ${DOCKERHUB_USERNAME}/worker:latest

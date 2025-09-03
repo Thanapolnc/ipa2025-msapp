@@ -63,11 +63,11 @@ def router_detail(router_id):
         # Get interface status collection
         interface_col = mydb["interface_status"]
 
-        # Get last 3 interface status records for this router IP
+        # Get last 5 interface status records for this router IP
         interface_records = list(
             interface_col.find({"router_ip": router["ip"]})
             .sort("timestamp", -1)
-            .limit(3)
+            .limit(5)
         )
 
         # Flatten the interfaces data for easier template rendering
