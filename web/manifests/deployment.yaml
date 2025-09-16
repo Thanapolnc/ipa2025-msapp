@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: ipa2025-msapp-web
-          image: thanapol077/web:latest
+          image: thanapol077/web:v1.0.0
           ports:
             - containerPort: 8080
           envFrom:
