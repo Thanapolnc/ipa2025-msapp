@@ -1,6 +1,5 @@
 import time
 
-import os
 from bson import json_util
 from producer import produce
 from database import get_router_info
@@ -8,10 +7,9 @@ from database import get_router_info
 
 def scheduler():
 
-    INTERVAL = 30.0
+    INTERVAL = 30
     next_run = time.monotonic()
     count = 0
-    host = os.getenv("RABBITMQ_HOST")
 
     while True:
         now = time.time()
@@ -23,7 +21,7 @@ def scheduler():
         try:
             for data in get_router_info():
                 body_bytes = json_util.dumps(data).encode("utf-8")
-                produce(host, body_bytes)
+                produce("rabbitmq", body_bytes)
         except Exception as e:
             print(e)
             time.sleep(3)
@@ -33,4 +31,5 @@ def scheduler():
 
 
 if __name__ == "__main__":
+
     scheduler()
