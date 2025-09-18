@@ -17,5 +17,5 @@ spec:
         mode: QueueLength
         value: "10"
         host: amqp://192.168.1.10:5672
-        usernameFromEnv: RABBITMQ_DEFAULT_USER
-        passwordFromEnv: RABBITMQ_DEFAULT_PASS
+        usernameFromEnv: RABBITMQ_USER
+        passwordFromEnv: RABBITMQ_PASSWORD
