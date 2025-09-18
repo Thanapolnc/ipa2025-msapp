@@ -16,4 +16,5 @@ spec:
         queueName: router_jobs
         mode: QueueLength
         value: "10"
+        protocol: auto
         hostFromEnv: RABBITMQ_URI
