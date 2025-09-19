@@ -4,8 +4,8 @@ import pika
 
 from callback import callback
 
-user = os.getenv("RABBITMQ_USER")
-pwd = os.getenv("RABBITMQ_PASSWORD")
+user = os.getenv("RABBITMQ_DEFAULT_USER")
+pwd = os.getenv("RABBITMQ_DEFAULT_PASS")
 
 
 def consume(host):

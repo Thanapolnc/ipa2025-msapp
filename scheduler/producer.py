@@ -4,8 +4,8 @@ import os
 
 def produce(host, body):
     # Get RabbitMQ credentials from environment variables
-    rabbitmq_user = os.environ.get("RABBITMQ_USER", "guest")
-    rabbitmq_password = os.environ.get("RABBITMQ_PASSWORD", "guest")
+    rabbitmq_user = os.environ.get("RABBITMQ_DEFAULT_USER", "guest")
+    rabbitmq_password = os.environ.get("RABBITMQ_DEFAULT_PASS", "guest")
     # Create connection with credentials
     credentials = pika.PlainCredentials(rabbitmq_user, rabbitmq_password)
     connection = pika.BlockingConnection(
