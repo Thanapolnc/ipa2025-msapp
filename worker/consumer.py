@@ -18,6 +18,7 @@ def consume(host):
             )
             break
         except Exception as e:
+            print(host)
             print(f"Failed: {e}")
             time.sleep(5)
     else:
