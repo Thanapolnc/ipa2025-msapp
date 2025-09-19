@@ -16,7 +16,7 @@ spec:
         queueName: router_jobs
         mode: QueueLength
         value: "10"
-        host: amqp://192.168.1.10:5672
-        vhost: /
-        usernameFromEnv: RABBITMQ_USER
-        passwordFromEnv: RABBITMQ_PASSWORD
+        protocol: auto
+        hostFromEnv: RABBITMQ_URI
+        usernameFromEnv: RABBITMQ_DEFAULT_USER
+        passwordFromEnv: RABBITMQ_DEFAULT_PASS
