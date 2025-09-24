@@ -4,8 +4,8 @@ import pika
 
 from callback import callback
 
-user = os.getenv("RABBITMQ_DEFAULT_USER")
-pwd = os.getenv("RABBITMQ_DEFAULT_PASS")
+user = os.environ.get("RABBITMQ_DEFAULT_USER")
+pwd = os.environ.get("RABBITMQ_DEFAULT_PASS")
 
 
 def consume(host):
@@ -18,7 +18,6 @@ def consume(host):
             )
             break
         except Exception as e:
-            print(host)
             print(f"Failed: {e}")
             time.sleep(5)
     else:

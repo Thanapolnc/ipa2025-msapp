@@ -1,3 +1,10 @@
 from consumer import consume
+import os
 
-consume("192.168.1.10")
+
+def worker():
+    consume(os.getenv("RABBITMQ_HOST"))
+
+
+if __name__ == "__main__":
+    worker()
