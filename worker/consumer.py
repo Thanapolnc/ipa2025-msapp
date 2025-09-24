@@ -14,7 +14,7 @@ def consume(host):
             print(f"Connecting to RabbitMQ (try {attempt})...")
             creds = pika.PlainCredentials(user, pwd)
             conn = pika.BlockingConnection(
-                pika.ConnectionParameters(host, credentials=creds)
+                pika.ConnectionParameters(host, port=5672,credentials=creds)
             )
             break
         except Exception as e:
