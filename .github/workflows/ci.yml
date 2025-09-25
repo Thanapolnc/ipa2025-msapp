@@ -48,6 +48,4 @@ jobs:
 
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/worker:latest
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/scheduler:latest
-        docker push ${{ secrets.DOCKERHUB_USERNAME }}/worker3:latest
-        docker push ${{ secrets.DOCKERHUB_USERNAME }}/scheduler:latest
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/web:latest
