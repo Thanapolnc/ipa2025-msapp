@@ -6,12 +6,14 @@ from callback import callback
 
 user = os.environ.get("RABBITMQ_DEFAULT_USER")
 pwd = os.environ.get("RABBITMQ_DEFAULT_PASS")
+print(user, pwd)
 
 
 def consume(host):
     for attempt in range(10):
         try:
             print(f"Connecting to RabbitMQ (try {attempt})...")
+            print(host)
             creds = pika.PlainCredentials(user, pwd)
             conn = pika.BlockingConnection(
                 pika.ConnectionParameters(host, port=5672, credentials=creds)
