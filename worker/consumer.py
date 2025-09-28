@@ -13,7 +13,6 @@ def consume(host):
     for attempt in range(10):
         try:
             print(f"Connecting to RabbitMQ (try {attempt})...")
-            print(user, pwd, host)
             creds = pika.PlainCredentials(user, pwd)
             conn = pika.BlockingConnection(
                 pika.ConnectionParameters(host, port=5672, credentials=creds)
@@ -23,7 +22,6 @@ def consume(host):
             print(f"Failed: {e}")
             time.sleep(5)
     else:
-        print(user, pwd, host)
         print("Could not connect after 10 attempts")
         exit(1)
 
